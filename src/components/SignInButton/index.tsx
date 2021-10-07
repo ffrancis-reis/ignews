@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { FaGithub } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
-import { signIn, signout, useSession } from "next-auth/client";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 export function SignInButton() {
   const [session] = useSession();
@@ -10,7 +10,7 @@ export function SignInButton() {
     <button
       type="button"
       className={styles.signInButton}
-      onClick={() => signout()}
+      onClick={() => signOut()}
     >
       <FaGithub color="#04d361" />
       {session.user.name}
